@@ -19,14 +19,14 @@ sudo docker push yogesh4297/srepo1:latest'''
         stage('DeployDev') {
           steps {
             sh '''sudo docker rm -f $(sudo docker ps -aq)||true
-sudo docker run -d -p 7777:80 --name devcon1 yogesh4297/srepo1:latest'''
+sudo docker run -d -p 7777:80 --name devcon2 yogesh4297/srepo1:latest'''
           }
         }
 
         stage('DeployQA') {
           steps {
             sh ''' sudo docker rm -f $(sudo docker ps -aq)||true
- sudo docker run -d -p 9999:80 --name qacon1 yogesh4297/srepo1:latest'''
+ sudo docker run -d -p 9999:80 --name qacon2 yogesh4297/srepo1:latest'''
           }
         }
 
